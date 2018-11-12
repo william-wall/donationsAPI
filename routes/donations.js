@@ -1,7 +1,7 @@
-var donations = require('../models/donations');
+import donations from '../models/donations';
+import express from 'express';
 
-var express = require('express');
-var router = express.Router();
+let router = express.Router();
 
 function getByValue(arr, id) {
     var result  = arr.filter(function(o) { return o.id == id;} );

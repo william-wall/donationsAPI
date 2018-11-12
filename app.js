@@ -29,7 +29,7 @@ if (prod) {
 } else {
     app.use(express.static(path.join(__dirname, 'build')));
 }  
-app.use("/public", express.static(__dirname + "/public"));  // NEW
+app.use('/public', express.static(__dirname + '/public'));  // NEW
     
 app.use('/', routes);
 
@@ -52,7 +52,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'dev') {
-    app.use(function(err, req, res, next) {
+    app.use(function(err, req, res) {
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
@@ -63,7 +63,7 @@ if (app.get('env') === 'dev') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,

@@ -1,13 +1,23 @@
-var chai = require('chai');
-var chaiHttp = require('chai-http');
-var server = require('../../bin/www');
-var expect = chai.expect;
-chai.use(require('chai-things'));
-var datastore = require('../../models/donations');
+import chai from 'chai';
+import chaiHttp from 'chai-http' ;
+var server = null ; // CHANGED
+let expect = chai.expect;
+var datastore = null ; // CHANGED
+import _ from 'lodash';
+import things from 'chai-things';
+chai.use( things);
 chai.use(chaiHttp);
-var _ = require('lodash' );
-
-describe('Donationss', function (){
+//
+describe('Donations', function (){
+    before(function(){
+        delete require.cache[require.resolve('../../bin/www')];
+        delete require.cache[require.resolve('../../models/donations')];
+        datastore = require('../../models/donations');
+        server = require('../../bin/www');
+    });
+    after(function (done) {
+        server.close(done);
+    });
     beforeEach(function(){  
         while(datastore.length > 0) {
             datastore.pop();
