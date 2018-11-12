@@ -2,7 +2,9 @@
   "name": "donationweb-3.0",
   "version": "0.0.0",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "test": "cross-env NODE_ENV=test && mocha test/routes/donations-test.js"
+  },
   "dependencies": {
     "body-parser": "~1.12.4",
     "bootstrap": "^3.3.7",
@@ -22,6 +24,7 @@
     "chai-http": "^2.0.1",
     "chai-things": "^0.2.0",
     "clean-webpack-plugin": "^0.1.17",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.24.0",
     "eslint": "^4.1.1",
     "eslint-plugin-json": "^1.2.0",
