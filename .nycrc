@@ -14,11 +14,11 @@
     "sourceMap": false,
     "instrument": false,
     "check-coverage": true,
-        "per-file": false,
-        "lines": 50,
-        "statements": 50,
-        "functions": 20,
-        "branches": 20,
-        "sourceMap": false,
-        "instrument": false
+    "per-file": false,
+    "lines": 50,
+    "statements": 50,
+    "functions": 20,
+    "branches": 20,
+    "sourceMap": false,
+    "instrument": false
 }
