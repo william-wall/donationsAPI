@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "test": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register test/routes/donations-test.js",
     "lint": "esw  ./test ./routes ./models/ app.js",
     "lint:watch": "npm run lint -- --watch",
     "test:watch": "npm run test -- --watch",
